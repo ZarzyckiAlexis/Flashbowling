@@ -1,0 +1,1079 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    --color-background: rgba(38,38,38, 0.95);
+    --color-button: #99e1d99f;
+    --color-background-navbar: rgba(38,38,38,0.7);
+    --color-logo-red: #FF1B1C;
+    --color-orange: #FF7F11;
+    --color-white: #FFF;
+    --color-dashboard: #232323;
+}
+
+/* SCROLLBAR CUSTOM */
+    /* Pour FireFox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-background) var(--color-logo-red);
+    }
+    
+    /* Pour Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    *::-webkit-scrollbar-track {
+        background: var(--color-background);
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--color-white);
+        border-radius: 20px;
+        border: 3px solid var(--color-logo-red);
+    }
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    background: url('../img/background-index.jpeg') repeat center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+}
+
+html {
+    height: 100%;
+}
+
+/* NAVBAR */
+
+.nothing {
+    text-decoration: none;
+}
+
+.showable-user {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-navbar h1 {
+    float: left;
+    margin-top: 3.5%;
+    margin-left: 3%;
+    font-size: 23px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+    color: var(--color-logo-red);
+    text-transform: uppercase;
+}
+
+.container h1 span.orange {
+    color: var(--color-orange);
+    margin-left: 1%;
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    position: sticky;
+    top: 0px;
+}
+
+.container-navbar{
+    position: absolute;
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--color-background-navbar);
+    z-index: 99;
+}
+
+div.dashboard {
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+input:not(input[type="checkbox"]) {
+    -webkit-appearance: none; /*Empêche Safari d'arrondir les boutons (Merci J-M)*/
+}
+
+nav input[type=checkbox]{
+    display: none;
+}
+
+nav label{
+    display: block;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: var(--color-background-navbar);
+}
+
+nav ul{
+    display: none;
+    list-style-type: none;
+    background-color: var(--color-background-navbar);
+}
+
+nav input[type=checkbox]:checked + ul{
+    display: flex;
+    flex-flow : column wrap;
+    width: 100%;
+}
+
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+nav div ul li a{
+    color: white;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    padding: 10px 0px;
+}
+
+.navbar-bars{
+    font-size: 35px;
+    margin-top: 0.2%;
+    margin-right: 0;
+    color: white;
+}
+
+.navbar-user {
+    float: left;
+    margin-left: 25%;
+    margin-top: 0.75%;
+    margin-right: 0;
+    font-size: 30px;
+    color: white;
+}
+
+
+/* MAIN-PAGE */
+
+/* MAIN-PAGE-SCROLL */
+
+.container-main-page-scroll {
+    background: var(--color-background-navbar);
+    height: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.main-arrowdown {
+    font-size: 35px;
+    transition: all ease-in-out 175ms;
+    color: var(--color-orange);
+}
+
+.main-arrowdown:hover {
+    transition: all ease-in-out 175ms   ;
+    color: var(--color-white);
+}
+
+#main-page-scroll {
+    padding-top: 20%;
+}
+
+#main-page-scroll h2 {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#main-page-scroll p {
+    font-size: 19px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+/* MAIN-PAGE-RESERVATION */
+
+.container-main-page-reservation {
+    background: var(--color-background-navbar);
+    height: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    margin-bottom: 2%;
+}
+
+#main-page-reservation {
+    padding-top: 20%;
+}
+
+#main-page-reservation h2 {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#main-page-reservation p {
+    font-size: 19px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.button-reserver {
+	display: block;
+	background-color: var(--color-button);
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+	border-radius: 5px;
+	cursor : pointer;
+	color: var(--color-white);
+	font-size: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+/* MAIN-PAGE-TARIFS */
+
+.container-main-page-tarifs {
+    background: var(--color-background-navbar);
+    height: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    margin-bottom: 10%;
+}
+
+#main-page-tarifs {
+    padding-top: 20%;
+}
+
+#main-page-tarifs h2 {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#main-page-tarifs p {
+    font-size: 19px;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.button-tarifs {
+	display: block;
+	background-color: var(--color-button);
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+	border-radius: 5px;
+	cursor : pointer;
+	color: var(--color-white);
+	font-size: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+    transition: all ease-in-out 175ms;
+}
+
+.button-tarifs:hover, .button-reserver:hover {
+    color: var(--color-orange);
+    transition: all ease-in-out 175ms; /*Petit effet de transition*/
+}
+
+/* USER.HTML */
+
+#user-page {
+    padding-top: 25vh;
+    height: 50vh;
+}
+
+.user-div-page {
+    width: 70%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    background: var(--color-background-navbar);
+}
+
+.button-user-login {
+	display: block;
+	background-color: var(--color-button);
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+	border-radius: 5px;
+	cursor : pointer;
+	color: var(--color-white);
+	font-size: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.button-user-register {
+	display: block;
+	background-color: var(--color-button);
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+	border-radius: 5px;
+	cursor : pointer;
+	color: var(--color-white);
+	font-size: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+/* LOGIN.HTML & REGISTER.HTML */
+
+.container-login-formulaire, .container-register-formulaire, .container-reservation-formulaire, .container-contact-formulaire {
+    padding-top: 25%;
+    width: 70%;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-bottom: 10%;
+    color: var(--color-white);
+}
+
+.container-login-formulaire {
+    height: 60vh;
+    margin-bottom: 5%;
+}
+
+form.login, form.register, form.reservation, form.contact {
+    width: 100%;
+    padding: 10%;
+    background-color: var(--color-background-navbar);
+}
+
+form.reservation, form.contact {
+    padding-bottom: 10rem;
+}
+
+form.login h1, form.register h1, form.reservation h1, form.contact h1 {
+    text-align: center;
+}
+
+form.reservation select.option, textarea.sujet, form.contact select.option {
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+input[type=text], input[type=password], input[type=mail], input[type=number], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset] {
+    float: right;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer; /*Permet d'afficher un pointeur cliquable*/
+    width: 100%;
+    margin-bottom: 3%;
+    transition: all ease-in-out 175ms;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+    color: var(--color-orange);
+    transition: all ease-in-out 175ms; /*Petit effet de transition*/
+}
+
+a.register {
+    text-decoration: none;
+    color: white;
+}
+
+a {
+    transition: all ease-in-out 175ms;
+}
+
+a:hover {
+    color: orange;
+    transition: all ease-in-out 175ms; /*Petit effet de transition*/
+}
+
+a.goup:hover {
+    color: white;
+}
+
+.condition {
+    cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+}
+
+.white{
+    color: white;
+}
+
+/* ANNONCES */
+
+.container-annonces-page-main {
+    padding-top: 30%;
+    height: 60vh;
+}
+
+/* TARIFS */
+
+.container-tarifs-semaine {
+    display: flex;
+    flex-flow: column wrap;
+    width: 50%;
+    margin: 0 auto; /* Centrer */
+    margin-bottom: 5%;
+    background-color: var(--color-background-navbar);
+    position: relative;
+    text-align: center;
+    align-content: center;
+    border: 5px solid var(--color-orange);
+    height: max-content;
+}
+
+.container-tarifs-semaine h2 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20px;
+    font-weight: unset;
+}
+
+.container-tarifs-semaine p {
+    margin-bottom: 2%;
+    font-size: 14px;
+}
+
+.container-tarifs {
+    color: white;
+}
+
+.container-tarifs h1 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20%;
+    margin-bottom: 5%;
+}
+
+h2.bowling {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5%;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    background: var(--color-background-navbar);
+    color: white;
+}
+
+.container-footer {
+    font-size: 16px;
+}
+
+div.title h1 {
+    float: none;
+    font-size: 23px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+    color: var(--color-logo-red);
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 2%;
+    margin-bottom: 2%;
+}
+
+div.title p {
+    color: var(--color-white);
+    font-size: 16px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+div.title p.favicon {
+    margin-top: 2%;
+}
+
+div.title p.createdby {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+div.contact h1 {
+    float: none;
+    text-align: center;
+    color: var(--color-orange);
+    font-size: 23px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+    text-transform: uppercase;
+    margin-bottom: 2%;
+}
+
+div.contact p {
+    color: var(--color-white);
+    font-size: 17px;
+    margin-top: 2%;
+    margin-bottom: 2.5%;
+    text-align: center;
+}
+
+div.contact p.contact-up {
+    font-size: 20px;
+    padding-bottom: 2%;
+}
+
+/* GLOBAL */
+
+a {  
+    text-decoration: none;
+    color: white;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.orange {
+    color: var(--color-orange);
+}
+
+p.rouge {
+    color: var(--color-logo-red);
+}
+
+p.vert {
+    color: green;
+}
+
+/* PANEL ADMIN */
+
+.container-dashboard {
+    padding-top: 125px;
+}
+
+.container-dashboard-annonces {
+    padding-top: 100px;
+}
+
+.button1 {
+    display: flex;
+    width: 75%;
+    margin-left: 20%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+
+}
+
+table{
+    border-collapse: collapse;
+    align-items: center;
+    align-content: center;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table {
+    width: 100%;
+}
+
+.styled-table thead tr {
+    background-color: var(--color-orange);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+td {
+    vertical-align:top;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr {
+    background-color: #f3f3f3;
+}
+
+/* BOUTTON DASHBOARD */
+
+div.button1 {
+    margin-top: 2.5%;
+}
+
+a.button1 {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+a.button1:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+}
+
+a.button2 {
+    display:inline-block;
+    padding:0.35em 0.8em;
+    border:0.1em solid var(--color-white);
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: var(--color-orange);
+    background-color: var(--color-background);
+    text-align:center;
+    transition: all 0.2s;
+}
+
+a.button2:hover {
+    color: var(--color-dashboard);
+    background-color: var( --color-white);
+}
+
+/* FORM */
+
+form.dashboard { 
+    max-width:420px; 
+    margin:50px auto;
+    color: white;
+}
+
+.feedback-input {
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: rgba(239, 239, 239, 0.3);
+}
+
+textarea.dashboard {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+option.dashboard {
+    background-color: transparent;
+    border:2px solid #CC6666;
+}
+
+.btn-dashboard {
+    width: 100%;
+    background:#CC6666;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    font-weight:700;
+    margin-top: 2.5%;
+}
+.btn-dashboard:hover {
+    background:#CC4949;
+}
+
+#quantity {
+    margin-top: 5%;
+}
+
+
+@media screen and (min-width: 980px){
+
+    body {
+        background: url('../img/background-index-desktop.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    html {
+        background-color: transparent;
+    }
+
+    /* NAVBAR */
+
+    .showable-user {
+        display: initial;
+    }
+
+    .container-navbar{
+        position: static;
+    }
+
+    .container-navbar h1 {
+        float: left;
+        margin-top: 0.5%;
+        margin-left: 0.5%;
+        font-size: 23px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+        color: var(--color-logo-red);
+        text-transform: uppercase;
+    }
+
+    nav label, nav input, nav span.mobile {
+        display: none;
+    }
+
+    nav input[type=checkbox]:checked + ul, nav ul{
+        display: flex;
+        flex-flow: row wrap;
+        background-color: transparent;
+    }
+
+    nav ul li{
+        position: relative;
+    }
+
+    nav div ul li a{
+        color: var(--color-white);
+    }
+
+    nav li a{
+        border-bottom: 2px solid transparent;
+        transition: all ease-in-out 300ms;
+    }
+
+    nav li a:hover{
+        color: var(--color-orange);
+        border-bottom: 5px solid var(--color-white);
+        transition: all ease-in-out 300ms; /*Petit effet de transition*/
+    }
+
+    /* MAIN PAGE SCROLL */
+
+    .container-main-page-scroll {
+        background: var(--color-background-navbar);
+        width: 90%;
+        margin-bottom: 15%;
+    }
+
+    .main-arrowdown {
+        font-size: 45px;
+    }
+
+    #main-page-scroll {
+        padding-top: 10%;
+    }
+
+    #main-page-scroll h2 {
+        font-size: 50px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    
+    #main-page-scroll p {
+        font-size: 30px;
+        margin-bottom: 5%;
+    }
+
+    /* MAIN PAGE RESERVATION */
+
+    .container-main-page-reservation {
+        background: var(--color-background-navbar);
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #main-page-reservation {
+        padding-top: 2%;
+    }
+
+    #main-page-reservation h2 {
+        font-size: 30px;
+        margin-top: 3%;
+        margin-bottom: 2%;
+    }
+    
+    #main-page-reservation p {
+        margin-bottom: -2%;
+    }
+
+    /* MAIN-PAGE-TARIFS */
+
+    .container-main-page-tarifs {
+        background: var(--color-background-navbar);
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    #main-page-tarifs {
+        padding-top: 2%;
+    }
+
+    #main-page-tarifs h2 {
+        font-size: 30px;
+        margin-top: 3%;
+        margin-bottom: 2%;
+    }
+    
+    #main-page-tarifs p {
+        margin-bottom: -2%;
+    }
+
+    .nextstep {
+        margin-bottom: -2%;
+    }
+
+    /* USER.PHP */
+    
+    #user-page {
+        padding-top: 20vh;
+        margin-top: 5%;
+        height: 50vh;
+        margin-bottom: 12%;
+    }
+    
+    .user-div-page {
+        width: 70%;
+        margin-bottom: 10%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    
+    .button-user-login {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+    
+    .button-user-register {
+        margin-right: 5%;
+        margin-left: 5%;
+        font-size: 20px;
+    }
+
+    /* FORMULAIRE */
+
+    .container-login-formulaire, .container-register-formulaire, .container-reservation-formulaire, .container-contact-formulaire {
+        padding-top: 5%;
+        height: 75vh;
+        width: 70%;
+        margin-left: 10%;
+        margin-right: auto;
+        padding-bottom: 0;
+        color: var(--color-white);
+    }
+
+    .container-login-formulaire h1, .container-register-formulaire h1, .container-reservation-formulaire h1, .container-contact-formulaire h1 {
+        margin-top: -8%;
+    }
+
+    form.reservation select.option, textarea.sujet, form.contact select.option {
+        margin-right: auto;
+        margin-top: 1%;
+        margin-bottom: 2%;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+
+    input.reservation[type=submit], input.reservation[type=reset], input.contact[type=submit], input.contact[type=reset] {
+        width: 40%;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    /* ANNONCES */
+
+    .container-annonces-page-main {
+        padding-top: 10%;
+        position: relative;
+        padding-left: 15vh;
+        padding-bottom: 0;
+    }
+    
+    /* TARIFS */
+
+
+    .container-tarifs-semaine{
+        display: flex;
+        flex-flow: column wrap;
+        width: 50%;
+        transition: all ease-in-out 175ms;
+    }
+
+    .container-tarifs-semaine h2 {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-size: 30px;
+        font-weight: unset;
+    }
+
+    .container-tarifs-semaine p {
+        margin-bottom: 2%;
+        font-size: 20px;
+    }
+
+    .container-tarifs {
+        color: white;
+    }
+
+    .container-tarifs h1 {
+        text-align: center;
+        font-size: 50px;
+        padding-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    h2.bowling {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 2%;
+    }
+
+    .container-tarifs-semaine:hover {
+        transition: all ease-in-out 175ms;
+        transform: scale(1.15); /* (150% zoom)*/
+    }
+
+    /* FOOTER */
+
+    footer {
+        width: 100%;
+        background: var(--color-background-navbar);
+        color: white;
+    }
+
+    .container-footer {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    div.title {
+        margin-left: 28%;
+        margin-right: 10%;
+    }
+    
+    div.title h1 {
+        font-size: 23px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+        color: var(--color-logo-red);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    div.title p {
+        margin-top: 20%;
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    div.title p.createdby {
+        margin-top: 5%;
+        margin-bottom: 0;
+    }
+    
+    div.contact h1 {
+        text-align: center;
+        color: var(--color-orange);
+        font-size: 23px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 1.0);
+        text-transform: uppercase;
+    }
+
+    div.contact p {
+        color: var(--color-white);
+        font-size: 17px;
+        text-align: center;
+        margin-top: 2%;
+        margin-bottom: 6%;
+    }
+    
+    div.contact p.contact-up {
+        color: var(--color-orange);
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    /* DASHBOARD-USER */
+
+    table{
+        border-collapse: collapse;
+        align-items: center;
+        align-content: center;
+        font-size: 1em;
+        font-family: sans-serif;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .styled-table {
+        table-layout: fixed;
+        max-width: 1000px;
+    }
+
+    /* DASHBOARD-ANNONCES */
+    .container-dashboard-annonces {
+        padding-top: 15px;
+        margin-left: 30%;
+    }
+
+    .container-dashboard {
+        padding-top: 75px;
+    }
+
+    .button1 {
+        display: block;
+        width: initial;
+        margin-left: initial;
+        flex-direction: unset;
+        flex-wrap: unset;
+        margin-bottom: 10px;
+    }
+
+}
